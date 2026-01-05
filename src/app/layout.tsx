@@ -27,7 +27,7 @@ export default function RootLayout({
               Begin Your Journey Now
             </Link>
             <p className="mb-4">
-              © 2024 Moikas 3D. All rights reserved.
+              © 2024 Moikas. All rights reserved.
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
               <a href="https://moikas.etsy.com" className="hover:text-jade-300">Etsy Shop</a>
