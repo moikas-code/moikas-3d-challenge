@@ -812,19 +812,6 @@ export default function Challenge() {
             );
           })}
         </div>
-
-        <div className="mt-12 text-center bg-gradient-to-r from-jade-500 to-jade-600 text-black rounded-lg p-8">
-         <h2 className="text-2xl font-bold mb-4">Need Models to Practice With?</h2>
-         <p className="text-lg mb-6">
-           Grab my Dummy 13 base + armor packs for the perfect practice subjects!
-         </p>
-         <a
-           href="https://moikas.com"
-           className="inline-block bg-white text-jade-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-colors duration-200"
-         >
-           Buy Here
-         </a>
-       </div>
      </main>
    );
  }
