@@ -548,6 +548,8 @@ const steps: Step[] = [
 
 export default function Challenge() {
    const [checked, setChecked] = useState<boolean[]>([]);
+   const [expandedPhases, setExpandedPhases] = useState<Set<number>>(new Set([1])); // Phase 1 starts expanded
+   const [expandedSteps, setExpandedSteps] = useState<Set<number>>(new Set()); // Track expanded step details
 
    useEffect(() => {
      const saved = localStorage.getItem("progressive3dProgress");
@@ -565,7 +567,35 @@ export default function Challenge() {
      localStorage.setItem("progressive3dProgress", JSON.stringify(newChecked));
    };
 
-   const completed = checked.filter(Boolean).length;
+   const togglePhase = (phaseNumber: number) => {
+     const newExpanded = new Set(expandedPhases);
+     if (newExpanded.has(phaseNumber)) {
+       newExpanded.delete(phaseNumber);
+     } else {
+       newExpanded.add(phaseNumber);
+     }
+      setExpandedPhases(newExpanded);
+    };
+
+    const toggleStepDetails = (stepNumber: number) => {
+      const newExpanded = new Set(expandedSteps);
+      if (newExpanded.has(stepNumber)) {
+        newExpanded.delete(stepNumber);
+      } else {
+        newExpanded.add(stepNumber);
+      }
+      setExpandedSteps(newExpanded);
+    };
+
+    const completed = checked.filter(Boolean).length;
+
+   // Phase definitions
+   const phases = [
+     { number: 1, name: "Tinkercad Foundation", steps: steps.slice(0, 15), software: "Tinkercad", description: "Master the basics of 3D modeling" },
+     { number: 2, name: "FreeCAD Intermediate", steps: steps.slice(15, 25), software: "FreeCAD", description: "Learn parametric CAD design" },
+     { number: 3, name: "Blender Technical Mastery", steps: steps.slice(25, 45), software: "Blender", description: "Advanced mesh modeling & techniques" },
+     { number: 4, name: "Professional Development", steps: steps.slice(45, 52), software: "Various Tools", description: "Business, portfolio & career skills" }
+   ];
 
    return (
      <main className="min-h-screen py-12 px-6 max-w-7xl mx-auto">
@@ -587,108 +617,203 @@ export default function Challenge() {
           </p>
         </div>
 
-       <div className="space-y-8">
-         {steps.map((step, i) => (
-           <div key={i} className={`border rounded-lg p-6 ${checked[i] ? "bg-jade-50 border-jade-200" : "bg-white border-gray-200"} shadow-md`}>
-             <div className="flex items-start justify-between mb-4">
-               <div className="flex items-center space-x-4">
-                 <input
-                   type="checkbox"
-                   checked={checked[i] || false}
-                   onChange={() => toggle(i)}
-                   className="w-6 h-6 accent-jade-600 cursor-pointer"
-                 />
-                 <h3 className="text-2xl font-bold text-jade-700">Step {step.number}: {step.skill}</h3>
-               </div>
-               <div className="flex items-center space-x-4">
-                 <div className="text-sm">
-                   <div className="flex items-center space-x-2 mb-1">
-                     <span className="font-medium text-gray-700">Complexity:</span>
-                     <div className="flex">
-                       {[...Array(5)].map((_, idx) => (
-                         <span key={idx} className={`text-lg ${idx < step.difficulty.complexity ? 'text-yellow-500' : 'text-gray-300'}`}>
-                           ★
-                         </span>
-                       ))}
-                     </div>
-                   </div>
-                   <div className="flex items-center space-x-2">
-                     <span className="font-medium text-gray-700">Scope:</span>
-                     <div className="flex">
-                       {[...Array(5)].map((_, idx) => (
-                         <span key={idx} className={`text-lg ${idx < step.difficulty.scope ? 'text-blue-500' : 'text-gray-300'}`}>
-                           ★
-                         </span>
-                       ))}
-                     </div>
-                   </div>
-                 </div>
-                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${checked[i] ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}`}>
-                   {checked[i] ? "Completed" : "In Progress"}
-                 </span>
-               </div>
-             </div>
+        <div className="space-y-6">
+          {phases.map((phase) => {
+            const phaseCompleted = phase.steps.filter((_, i) => checked[phase.steps[0].number - 1 + i]).length;
+            const phaseTotal = phase.steps.length;
+            const isExpanded = expandedPhases.has(phase.number);
 
-             <div className="mb-4">
-               <h4 className="text-lg font-semibold mb-2">Task</h4>
-               <p className="text-gray-700">{step.task}</p>
-             </div>
+            return (
+              <div key={phase.number} className="border rounded-lg shadow-md overflow-hidden">
+                {/* Phase Header */}
+                <div
+                  className="bg-gradient-to-r from-jade-500 to-jade-600 text-black p-6 cursor-pointer hover:from-jade-600 hover:to-jade-700 transition-colors"
+                  onClick={() => togglePhase(phase.number)}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-2">
+                         <span className="text-2xl font-bold text-black">Phase {phase.number}</span>
+                         <svg
+                           className={`w-6 h-6 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                           fill="none"
+                           stroke="white"
+                           viewBox="0 0 24 24"
+                         >
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                         </svg>
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-semibold">{phase.name}</h2>
+                        <p className="text-jade-100 text-sm">{phase.description}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold">{phaseCompleted}/{phaseTotal}</div>
+                      <div className="text-sm text-jade-100">Steps Completed</div>
+                      <div className="w-32 bg-jade-700 rounded-full h-2 mt-2">
+                        <div
+                          className="bg-white h-2 rounded-full transition-all duration-300"
+                          style={{ width: `${(phaseCompleted / phaseTotal) * 100}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center space-x-4 text-sm">
+                    <span className="bg-jade-700 px-3 py-1 rounded-full">
+                      📚 {phase.software}
+                    </span>
+                    <span className="bg-jade-700 px-3 py-1 rounded-full">
+                      🎯 Steps {phase.steps[0].number}-{phase.steps[phase.steps.length - 1].number}
+                    </span>
+                  </div>
+                </div>
 
-             <div className="mb-4">
-               <h4 className="text-lg font-semibold mb-2">Description</h4>
-               <p className="text-gray-600">{step.description}</p>
-             </div>
+                {/* Phase Content */}
+                {isExpanded && (
+                  <div className="bg-gray-50 p-6">
+                    <div className="space-y-4">
+                      {phase.steps.map((step, stepIndex) => {
+                        const globalIndex = step.number - 1;
+                        const isStepExpanded = expandedSteps.has(step.number);
 
-             <div className="mb-4">
-               <h4 className="text-lg font-semibold mb-2">Builds On</h4>
-               <p className="text-gray-600 text-sm">{step.buildOn}</p>
-             </div>
+                        return (
+                          <div key={step.number} className={`border rounded-lg shadow-sm overflow-hidden ${checked[globalIndex] ? "bg-jade-50 border-jade-200" : "bg-white border-gray-200"}`}>
+                            {/* Step Header */}
+                            <div className="flex items-center justify-between p-4">
+                              <div className="flex items-center space-x-4">
+                                <input
+                                  type="checkbox"
+                                  checked={checked[globalIndex] || false}
+                                  onChange={() => toggle(globalIndex)}
+                                  className="w-5 h-5 accent-jade-600 cursor-pointer"
+                                />
+                                <div>
+                                  <h4 className="font-semibold text-jade-700">Step {step.number}: {step.skill}</h4>
+                                  <p className="text-sm text-gray-600 line-clamp-2">{step.task}</p>
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <div className="text-right">
+                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${checked[globalIndex] ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}`}>
+                                    {checked[globalIndex] ? "Completed" : "In Progress"}
+                                  </span>
+                                  <div className="text-xs text-gray-500 mt-1">{step.estimatedTime}</div>
+                                </div>
+                                <button
+                                  onClick={() => toggleStepDetails(step.number)}
+                                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                                >
+                                  <svg
+                                    className={`w-4 h-4 transform transition-transform ${isStepExpanded ? 'rotate-180' : ''}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
 
-             <div className="border-t pt-4 mb-4">
-               <h4 className="text-lg font-semibold mb-3">What You'll Learn</h4>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <div>
-                   <h5 className="font-medium text-jade-700 mb-2">Technical Skills</h5>
-                   <ul className="text-sm text-gray-600 space-y-1">
-                     {step.learningObjectives.slice(0, 2).map((objective, idx) => (
-                       <li key={idx}>• {objective}</li>
-                     ))}
-                   </ul>
-                 </div>
-                 <div>
-                   <h5 className="font-medium text-jade-700 mb-2">Creative Skills</h5>
-                   <ul className="text-sm text-gray-600 space-y-1">
-                     <li>• Problem solving</li>
-                     <li>• Design thinking</li>
-                     <li>• Iterative improvement</li>
-                   </ul>
-                 </div>
-               </div>
-             </div>
+                            {/* Expanded Step Details */}
+                            {isStepExpanded && (
+                              <div className="px-4 pb-4 border-t bg-gray-50">
+                                <div className="space-y-4 pt-4">
+                                  {/* Full Task Description */}
+                                  <div>
+                                    <h5 className="font-medium text-gray-900 mb-2">Task Description</h5>
+                                    <p className="text-sm text-gray-700">{step.description}</p>
+                                  </div>
 
-             {step.estimatedTime && (
-               <div className="text-sm text-gray-500 mb-4">
-                 <span className="font-medium">Estimated Time:</span> {step.estimatedTime}
-               </div>
-             )}
+                                  {/* Builds On */}
+                                  <div>
+                                    <h5 className="font-medium text-gray-900 mb-2">Builds On</h5>
+                                    <p className="text-sm text-gray-600">{step.buildOn}</p>
+                                  </div>
 
-             <details className="border-t pt-4">
-               <summary className="cursor-pointer font-semibold text-jade-700 hover:text-jade-800">
-                 Show Full Learning Objectives
-               </summary>
-               <div className="mt-3">
-                 <ul className="text-sm text-gray-600 space-y-1">
-                   {step.learningObjectives.map((objective, idx) => (
-                     <li key={idx}>• {objective}</li>
-                   ))}
-                 </ul>
-               </div>
-             </details>
-           </div>
-         ))}
-       </div>
+                                  {/* Difficulty Ratings */}
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                      <h5 className="font-medium text-gray-900 mb-2">Difficulty Ratings</h5>
+                                      <div className="space-y-2">
+                                        <div className="flex items-center space-x-2">
+                                          <span className="text-sm font-medium text-gray-700">Complexity:</span>
+                                          <div className="flex">
+                                            {[...Array(5)].map((_, idx) => (
+                                              <span key={idx} className={`text-sm ${idx < step.difficulty.complexity ? 'text-yellow-500' : 'text-gray-300'}`}>
+                                                ★
+                                              </span>
+                                            ))}
+                                          </div>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                          <span className="text-sm font-medium text-gray-700">Scope:</span>
+                                          <div className="flex">
+                                            {[...Array(5)].map((_, idx) => (
+                                              <span key={idx} className={`text-sm ${idx < step.difficulty.scope ? 'text-blue-500' : 'text-gray-300'}`}>
+                                                ★
+                                              </span>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
 
-       <div className="mt-12 text-center bg-gradient-to-r from-jade-500 to-jade-600 text-white rounded-lg p-8">
+                                    {/* Learning Objectives */}
+                                    <div>
+                                      <h5 className="font-medium text-gray-900 mb-2">What You'll Learn</h5>
+                                      <div className="space-y-3">
+                                        <div>
+                                          <h6 className="text-sm font-medium text-jade-700 mb-1">Technical Skills</h6>
+                                          <ul className="text-sm text-gray-600 space-y-1">
+                                            {step.learningObjectives.slice(0, 3).map((objective, idx) => (
+                                              <li key={idx}>• {objective}</li>
+                                            ))}
+                                          </ul>
+                                        </div>
+                                        <div>
+                                          <h6 className="text-sm font-medium text-jade-700 mb-1">Creative Skills</h6>
+                                          <ul className="text-sm text-gray-600 space-y-1">
+                                            <li>• Problem solving</li>
+                                            <li>• Design thinking</li>
+                                            <li>• Iterative improvement</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  {/* Show All Learning Objectives */}
+                                  {step.learningObjectives.length > 3 && (
+                                    <details className="mt-4">
+                                      <summary className="cursor-pointer text-sm font-medium text-jade-700 hover:text-jade-800">
+                                        Show All Learning Objectives ({step.learningObjectives.length})
+                                      </summary>
+                                      <div className="mt-2">
+                                        <ul className="text-sm text-gray-600 space-y-1">
+                                          {step.learningObjectives.map((objective, idx) => (
+                                            <li key={idx}>• {objective}</li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    </details>
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center bg-gradient-to-r from-jade-500 to-jade-600 text-black rounded-lg p-8">
          <h2 className="text-2xl font-bold mb-4">Need Models to Practice With?</h2>
          <p className="text-lg mb-6">
            Grab my Dummy 13 base + armor packs for the perfect practice subjects!
