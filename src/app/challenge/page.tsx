@@ -167,382 +167,384 @@ const steps: Step[] = [
      description: "Demonstrate mastery of Tinkercad by creating a complete, functional 3D printed item from concept to finished design.",
      learningObjectives: ["Complete design workflow", "Project planning and execution", "Quality assurance techniques", "Portfolio-worthy creation"],
      estimatedTime: "12-18 hours"
-   },
+    },
 
-   // Phase 2: Onshape Intermediate (Steps 16-25)
-   {
-     number: 16,
-     skill: "Parametric Modeling Intro",
-     task: "Recreate your Tinkercad designs using Onshape's sketch-based parametric approach.",
-     buildOn: "Transition from Tinkercad: Learn professional parametric design workflows.",
-     difficulty: { complexity: 4, scope: 2 },
-     description: "Make the transition to professional CAD software by learning parametric modeling with Onshape.",
-     learningObjectives: ["Onshape interface navigation", "Sketch-based modeling", "Parametric constraints", "Professional CAD workflows"],
-     estimatedTime: "8-12 hours"
-   },
-   {
-     number: 17,
-     skill: "Advanced Sketching",
-     task: "Create complex sketches with proper constraints and dimensions.",
-     buildOn: "Builds on Step 16: Parametric basics, now master sketch creation.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Master the art of creating precise, fully-constrained sketches that form the foundation of parametric models.",
-     learningObjectives: ["Advanced sketching techniques", "Geometric constraints", "Dimensioning best practices", "Sketch validation"],
-     estimatedTime: "10-15 hours"
-   },
-   {
-     number: 18,
-     skill: "Feature-Based Modeling",
-     task: "Build complex parts using extrusions, revolutions, and feature operations.",
-     buildOn: "Builds on Step 17: Constrained sketches, now create 3D features.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Learn to build sophisticated 3D models using Onshape's feature-based parametric approach.",
-     learningObjectives: ["Extrusion and revolution features", "Feature editing and modification", "Design history management", "Parametric relationships"],
-     estimatedTime: "12-18 hours"
-   },
-   {
-     number: 19,
-     skill: "Assembly Design",
-     task: "Create multi-part assemblies with proper mates and constraints.",
-     buildOn: "Builds on Step 18: Individual features, now combine into assemblies.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Master the creation of complex assemblies where multiple parts interact through precise constraints.",
-     learningObjectives: ["Assembly creation techniques", "Mate and constraint application", "Assembly motion simulation", "Interference checking"],
-     estimatedTime: "15-20 hours"
-   },
-   {
-     number: 20,
-     skill: "Advanced Operations",
-     task: "Use lofts, sweeps, and advanced boolean operations for complex shapes.",
-     buildOn: "Builds on Step 19: Basic assemblies, now create organic and complex forms.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Explore advanced modeling operations to create complex, organic shapes that go beyond basic primitives.",
-     learningObjectives: ["Loft and sweep operations", "Advanced boolean techniques", "Complex curve creation", "Surface modeling basics"],
-     estimatedTime: "18-25 hours"
-   },
-   {
-     number: 21,
-     skill: "Sheet Metal Design",
-     task: "Design sheet metal parts with bends, flanges, and manufacturing considerations.",
-     buildOn: "Builds on Step 20: Complex operations, now design for metal fabrication.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Learn to design parts for sheet metal manufacturing, including bend allowances and fabrication constraints.",
-     learningObjectives: ["Sheet metal modeling", "Bend and flange creation", "Manufacturing constraints", "Flat pattern generation"],
-     estimatedTime: "20-25 hours"
-   },
-   {
-     number: 22,
-     skill: "Injection Mold Design",
-     task: "Design parts for injection molding with draft angles and parting lines.",
-     buildOn: "Builds on Step 21: Metal design, now plastic manufacturing processes.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Master the design considerations for injection-molded plastic parts, including manufacturability and cost optimization.",
-     learningObjectives: ["Draft angle application", "Parting line design", "Ribs and bosses", "Mold design principles"],
-     estimatedTime: "22-28 hours"
-   },
-   {
-     number: 23,
-     skill: "GD&T & Tolerancing",
-     task: "Apply geometric dimensioning and tolerancing to your designs.",
-     buildOn: "Builds on Step 22: Manufacturing design, now precision specification.",
-     difficulty: { complexity: 5, scope: 3 },
-     description: "Learn professional tolerancing methods to ensure your designs can be manufactured consistently and cost-effectively.",
-     learningObjectives: ["GD&T symbol application", "Tolerance stack analysis", "Precision specification", "Manufacturing communication"],
-     estimatedTime: "20-25 hours"
-   },
-   {
-     number: 24,
-     skill: "Design for Manufacturing",
-     task: "Optimize designs for CNC machining, 3D printing, and injection molding.",
-     buildOn: "Builds on Step 23: Tolerancing, now optimize for multiple manufacturing processes.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Develop expertise in optimizing designs for various manufacturing processes while maintaining functionality and cost efficiency.",
-     learningObjectives: ["DFM principles", "Process-specific optimization", "Cost-benefit analysis", "Material selection guidance"],
-     estimatedTime: "25-30 hours"
-   },
-   {
-     number: 25,
-     skill: "Onshape Professional Project",
-     task: "Design a complete product with multiple parts, assembly, and manufacturing documentation.",
-     buildOn: "Combines Steps 16-24: Comprehensive parametric design mastery.",
-     difficulty: { complexity: 5, scope: 5 },
-     description: "Demonstrate professional CAD proficiency by designing a complete product ready for manufacturing.",
-     learningObjectives: ["Complete product design", "Manufacturing documentation", "Design validation", "Professional presentation"],
-     estimatedTime: "30-40 hours"
-   },
+    // Phase 2: FreeCAD Intermediate (Steps 16-25)
+    {
+      number: 16,
+      skill: "Parametric Modeling Intro",
+      task: "Recreate your Tinkercad designs using FreeCAD's sketch-based parametric approach.",
+      buildOn: "Transition from Tinkercad: Learn professional parametric design workflows.",
+      difficulty: { complexity: 4, scope: 2 },
+      description: "Make the transition to professional CAD software by learning parametric modeling with FreeCAD (free, open-source alternative to commercial CAD).",
+      learningObjectives: ["FreeCAD interface navigation", "Sketch-based modeling", "Parametric constraints", "Professional CAD workflows"],
+      estimatedTime: "8-12 hours"
+    },
+    {
+      number: 17,
+      skill: "Advanced Sketching",
+      task: "Create complex sketches with proper constraints and dimensions.",
+      buildOn: "Builds on Step 16: Parametric basics, now master sketch creation.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Master the art of creating precise, fully-constrained sketches that form the foundation of parametric models in FreeCAD.",
+      learningObjectives: ["Advanced sketching techniques", "Geometric constraints", "Dimensioning best practices", "Sketch validation"],
+      estimatedTime: "10-15 hours"
+    },
+    {
+      number: 18,
+      skill: "Feature-Based Modeling",
+      task: "Build complex parts using extrusions, revolutions, and feature operations.",
+      buildOn: "Builds on Step 17: Constrained sketches, now create 3D features.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Learn to build sophisticated 3D models using FreeCAD's feature-based parametric approach.",
+      learningObjectives: ["Extrusion and revolution features", "Feature editing and modification", "Design history management", "Parametric relationships"],
+      estimatedTime: "12-18 hours"
+    },
+    {
+      number: 19,
+      skill: "Assembly Design",
+      task: "Create multi-part assemblies with proper constraints and joints.",
+      buildOn: "Builds on Step 18: Individual features, now combine into assemblies.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Master the creation of complex assemblies where multiple parts interact through precise constraints in FreeCAD.",
+      learningObjectives: ["Assembly creation techniques", "Constraint and joint application", "Assembly motion simulation", "Interference checking"],
+      estimatedTime: "15-20 hours"
+    },
+    {
+      number: 20,
+      skill: "Advanced Operations",
+      task: "Use lofts, sweeps, and advanced boolean operations for complex shapes.",
+      buildOn: "Builds on Step 19: Basic assemblies, now create organic and complex forms.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Explore advanced modeling operations in FreeCAD to create complex, organic shapes that go beyond basic primitives.",
+      learningObjectives: ["Loft and sweep operations", "Advanced boolean techniques", "Complex curve creation", "Surface modeling basics"],
+      estimatedTime: "18-25 hours"
+    },
+    {
+      number: 21,
+      skill: "Sheet Metal Workbench",
+      task: "Design sheet metal parts with bends, flanges, and manufacturing considerations.",
+      buildOn: "Builds on Step 20: Complex operations, now design for metal fabrication.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Learn to design parts for sheet metal manufacturing using FreeCAD's Sheet Metal workbench, including bend allowances and fabrication constraints.",
+      learningObjectives: ["Sheet metal workbench usage", "Bend and flange creation", "Manufacturing constraints", "Flat pattern generation"],
+      estimatedTime: "20-25 hours"
+    },
+    {
+      number: 22,
+      skill: "Injection Mold Design",
+      task: "Design parts for injection molding with draft angles and parting lines.",
+      buildOn: "Builds on Step 21: Metal design, now plastic manufacturing processes.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Master the design considerations for injection-molded plastic parts, including manufacturability and cost optimization in FreeCAD.",
+      learningObjectives: ["Draft angle application", "Parting line design", "Ribs and bosses", "Mold design principles"],
+      estimatedTime: "22-28 hours"
+    },
+    {
+      number: 23,
+      skill: "GD&T & Tolerancing",
+      task: "Apply geometric dimensioning and tolerancing to your designs.",
+      buildOn: "Builds on Step 22: Manufacturing design, now precision specification.",
+      difficulty: { complexity: 5, scope: 3 },
+      description: "Learn professional tolerancing methods to ensure your designs can be manufactured consistently and cost-effectively.",
+      learningObjectives: ["GD&T symbol application", "Tolerance stack analysis", "Precision specification", "Manufacturing communication"],
+      estimatedTime: "20-25 hours"
+    },
+    {
+      number: 24,
+      skill: "Design for Manufacturing",
+      task: "Optimize designs for CNC machining, 3D printing, and injection molding.",
+      buildOn: "Builds on Step 23: Tolerancing, now optimize for multiple manufacturing processes.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Develop expertise in optimizing designs for various manufacturing processes while maintaining functionality and cost efficiency.",
+      learningObjectives: ["DFM principles", "Process-specific optimization", "Cost-benefit analysis", "Material selection guidance"],
+      estimatedTime: "25-30 hours"
+    },
+    {
+      number: 25,
+      skill: "FreeCAD Professional Project",
+      task: "Design a complete product with multiple parts, assembly, and manufacturing documentation.",
+      buildOn: "Combines Steps 16-24: Comprehensive parametric design mastery.",
+      difficulty: { complexity: 5, scope: 5 },
+      description: "Demonstrate professional CAD proficiency by designing a complete product ready for manufacturing using FreeCAD.",
+      learningObjectives: ["Complete product design", "Manufacturing documentation", "Design validation", "Professional presentation"],
+      estimatedTime: "30-40 hours"
+    },
 
-   // Phase 3: Blender Advanced (Steps 26-52)
-   {
-     number: 26,
-     skill: "Blender Fundamentals",
-     task: "Learn Blender's interface and basic mesh editing tools.",
-     buildOn: "Transition from Onshape: Adapt parametric knowledge to mesh-based modeling.",
-     difficulty: { complexity: 4, scope: 2 },
-     description: "Master Blender's unique interface and workflow to unlock powerful mesh modeling capabilities.",
-     learningObjectives: ["Blender interface mastery", "Basic mesh editing", "Navigation and selection", "Workflow adaptation"],
-     estimatedTime: "15-20 hours"
-   },
-   {
-     number: 27,
-     skill: "Advanced Mesh Editing",
-     task: "Use Blender's mesh tools to create and modify complex geometry.",
-     buildOn: "Builds on Step 26: Interface basics, now advanced mesh manipulation.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Develop expertise in Blender's mesh editing tools for creating detailed, precise geometry.",
-     learningObjectives: ["Advanced mesh operations", "Topology optimization", "Edge flow management", "Precision modeling techniques"],
-     estimatedTime: "18-25 hours"
-   },
-   {
-     number: 28,
-     skill: "UV Mapping & Texturing",
-     task: "Create UV maps and apply textures to your 3D models.",
-     buildOn: "Builds on Step 27: Mesh editing, now add surface detail and materials.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Learn professional texturing workflows to add realistic surface detail to your models.",
-     learningObjectives: ["UV unwrapping techniques", "Texture creation and application", "Material setup", "PBR texturing"],
-     estimatedTime: "20-25 hours"
-   },
-   {
-     number: 29,
-     skill: "Lighting & Rendering",
-     task: "Set up professional lighting and render high-quality images.",
-     buildOn: "Builds on Step 28: Textured models, now create professional presentations.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Master the art of lighting and rendering to create stunning visual presentations of your 3D work.",
-     learningObjectives: ["Lighting setup techniques", "Render engine mastery", "Post-processing", "Composition and presentation"],
-     estimatedTime: "22-28 hours"
-   },
-   {
-     number: 30,
-     skill: "Character Modeling",
-     task: "Model a detailed character or figure using Blender's tools.",
-     buildOn: "Builds on Step 29: Rendering basics, now create organic character forms.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Develop character modeling skills to create expressive, anatomically correct figures.",
-     learningObjectives: ["Character proportions", "Anatomy understanding", "Facial modeling", "Pose and expression"],
-     estimatedTime: "25-35 hours"
-   },
-   {
-     number: 31,
-     skill: "Rigging & Animation",
-     task: "Create rigs and animate your 3D models.",
-     buildOn: "Builds on Step 30: Static characters, now bring them to life with movement.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Learn professional rigging and animation techniques to create dynamic, moving 3D content.",
-     learningObjectives: ["Rigging fundamentals", "Animation principles", "Keyframe animation", "Motion studies"],
-     estimatedTime: "28-35 hours"
-   },
-   {
-     number: 32,
-     skill: "Hard Surface Modeling",
-     task: "Model mechanical and architectural objects with precision.",
-     buildOn: "Builds on Step 31: Organic forms, now master hard surface techniques.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Develop expertise in modeling mechanical, architectural, and industrial objects with technical precision.",
-     learningObjectives: ["Hard surface techniques", "Precision modeling", "Industrial design", "Technical accuracy"],
-     estimatedTime: "25-30 hours"
-   },
-   {
-     number: 33,
-     skill: "Procedural Modeling",
-     task: "Use modifiers and procedural techniques for efficient modeling.",
-     buildOn: "Builds on Step 32: Manual modeling, now leverage automation and efficiency.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Master Blender's procedural tools and modifiers to create complex models efficiently.",
-     learningObjectives: ["Modifier stack mastery", "Procedural generation", "Efficiency techniques", "Complex pattern creation"],
-     estimatedTime: "20-28 hours"
-   },
-   {
-     number: 34,
-     skill: "Sculpting Fundamentals",
-     task: "Learn digital sculpting with Blender's sculpt mode.",
-     buildOn: "Builds on Step 33: Procedural techniques, now organic sculpting.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Discover the power of digital sculpting to create highly detailed organic forms.",
-     learningObjectives: ["Sculpt mode navigation", "Brush techniques", "Detail creation", "Sculpting workflow"],
-     estimatedTime: "22-30 hours"
-   },
-   {
-     number: 35,
-     skill: "Advanced Sculpting",
-     task: "Create highly detailed sculptures with advanced techniques.",
-     buildOn: "Builds on Step 34: Basic sculpting, now professional-level detail work.",
-     difficulty: { complexity: 5, scope: 5 },
-     description: "Push the boundaries of digital sculpting to create production-ready detailed models.",
-     learningObjectives: ["Advanced brush control", "Detail refinement", "Sculpting best practices", "High-resolution workflows"],
-     estimatedTime: "30-40 hours"
-   },
-   {
-     number: 36,
-     skill: "Retopology",
-     task: "Convert high-poly sculpts to low-poly game-ready models.",
-     buildOn: "Builds on Step 35: High-detail sculpting, now optimize for real-time use.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Learn professional retopology techniques to prepare sculpted models for games and real-time applications.",
-     learningObjectives: ["Retopology techniques", "Quad-based topology", "Edge flow optimization", "Game asset preparation"],
-     estimatedTime: "25-35 hours"
-   },
-   {
-     number: 37,
-     skill: "Normal Map Baking",
-     task: "Bake high-poly details onto low-poly models.",
-     buildOn: "Builds on Step 36: Retopologized models, now preserve sculpt details.",
-     difficulty: { complexity: 5, scope: 3 },
-     description: "Master the art of baking high-resolution detail into efficient, low-polygon models.",
-     learningObjectives: ["Normal map generation", "Texture baking", "Detail preservation", "Optimization techniques"],
-     estimatedTime: "20-28 hours"
-   },
-   {
-     number: 38,
-     skill: "Shader Creation",
-     task: "Create custom materials and shaders for realistic rendering.",
-     buildOn: "Builds on Step 37: Baked textures, now advanced material creation.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Develop custom shaders and materials to achieve photorealistic rendering results.",
-     learningObjectives: ["Node-based materials", "Shader programming basics", "Advanced material properties", "Realistic material creation"],
-     estimatedTime: "28-35 hours"
-   },
-   {
-     number: 39,
-     skill: "Particle Systems",
-     task: "Create dynamic effects using Blender's particle system.",
-     buildOn: "Builds on Step 38: Static materials, now dynamic simulations.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Harness the power of particle systems to create dynamic, realistic effects and simulations.",
-     learningObjectives: ["Particle system setup", "Emitter configuration", "Force field application", "Effect optimization"],
-     estimatedTime: "25-32 hours"
-   },
-   {
-     number: 40,
-     skill: "Physics Simulation",
-     task: "Use Blender's physics engine for realistic simulations.",
-     buildOn: "Builds on Step 39: Particle effects, now rigid/soft body dynamics.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Master physics simulations to create realistic motion and interaction in your 3D scenes.",
-     learningObjectives: ["Rigid body physics", "Soft body simulation", "Cloth dynamics", "Collision detection"],
-     estimatedTime: "30-38 hours"
-   },
-   {
-     number: 41,
-     skill: "Python Scripting",
-     task: "Automate workflows using Blender's Python API.",
-     buildOn: "Builds on Step 40: Manual processes, now introduce automation.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Learn to automate repetitive tasks and extend Blender's functionality through Python scripting.",
-     learningObjectives: ["Python fundamentals", "Blender API usage", "Script creation", "Workflow automation"],
-     estimatedTime: "35-45 hours"
-   },
-   {
-     number: 42,
-     skill: "Advanced Rendering",
-     task: "Master Cycles and EEVEE for professional-quality renders.",
-     buildOn: "Builds on Step 41: Technical skills, now focus on final presentation.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Perfect your rendering skills to create professional-quality images and animations.",
-     learningObjectives: ["Advanced render settings", "Compositing techniques", "Render optimization", "Quality control"],
-     estimatedTime: "28-35 hours"
-   },
-   {
-     number: 43,
-     skill: "Video Editing & VFX",
-     task: "Edit rendered footage and add visual effects.",
-     buildOn: "Builds on Step 42: Static renders, now create dynamic video content.",
-     difficulty: { complexity: 5, scope: 5 },
-     description: "Combine 3D modeling with video editing and visual effects for complete multimedia production.",
-     learningObjectives: ["Video sequence editing", "VFX integration", "Motion graphics", "Post-production workflow"],
-     estimatedTime: "30-40 hours"
-   },
-   {
-     number: 44,
-     skill: "Game Asset Pipeline",
-     task: "Create and optimize assets for game engines.",
-     buildOn: "Builds on Step 43: Video production, now game development focus.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Learn the complete pipeline for creating optimized 3D assets for modern game engines.",
-     learningObjectives: ["LOD creation", "Texture optimization", "Engine-specific workflows", "Performance optimization"],
-     estimatedTime: "25-35 hours"
-   },
-   {
-     number: 45,
-     skill: "AI-Assisted Modeling",
-     task: "Integrate AI tools and generative techniques into your workflow.",
-     buildOn: "Builds on Step 44: Traditional modeling, now leverage AI assistance.",
-     difficulty: { complexity: 5, scope: 4 },
-     description: "Explore how AI and machine learning can enhance and accelerate your 3D modeling workflow.",
-     learningObjectives: ["AI tool integration", "Generative modeling", "Workflow enhancement", "Future-ready techniques"],
-     estimatedTime: "20-30 hours"
-   },
-   {
-     number: 46,
-     skill: "Community Collaboration",
-     task: "Contribute to open-source projects and collaborate with the Blender community.",
-     buildOn: "Builds on Step 45: Individual work, now collaborative development.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Learn to work effectively within the open-source community and contribute to larger projects.",
-     learningObjectives: ["Open-source contribution", "Community collaboration", "Code review processes", "Project management"],
-     estimatedTime: "15-25 hours"
-   },
-   {
-     number: 47,
-     skill: "Business & Entrepreneurship",
-     task: "Develop business skills for 3D modeling entrepreneurship.",
-     buildOn: "Builds on Step 46: Technical collaboration, now business development.",
-     difficulty: { complexity: 3, scope: 4 },
-     description: "Learn the business side of 3D modeling including freelancing, pricing, and client management.",
-     learningObjectives: ["Pricing strategies", "Client communication", "Project management", "Business development"],
-     estimatedTime: "20-30 hours"
-   },
-   {
-     number: 48,
-     skill: "Portfolio Development",
-     task: "Create a professional portfolio showcasing your best work.",
-     buildOn: "Builds on Step 47: Business skills, now presentation and marketing.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Develop a compelling portfolio that effectively showcases your 3D modeling skills to potential clients and employers.",
-     learningObjectives: ["Portfolio curation", "Presentation design", "Personal branding", "Online presence"],
-     estimatedTime: "25-35 hours"
-   },
-   {
-     number: 49,
-     skill: "Advanced Specialization",
-     task: "Choose and master a specialized area (e.g., character design, architecture, product design).",
-     buildOn: "Builds on Step 48: General portfolio, now develop deep expertise in one area.",
-     difficulty: { complexity: 5, scope: 5 },
-     description: "Become an expert in a specific niche area of 3D modeling to stand out in the competitive market.",
-     learningObjectives: ["Specialization focus", "Industry standards", "Advanced techniques", "Professional networking"],
-     estimatedTime: "40-60 hours"
-   },
-   {
-     number: 50,
-     skill: "Teaching & Mentoring",
-     task: "Share your knowledge by teaching others or creating tutorials.",
-     buildOn: "Builds on Step 49: Personal expertise, now give back to the community.",
-     difficulty: { complexity: 4, scope: 4 },
-     description: "Develop teaching skills and contribute to the 3D community by mentoring beginners and sharing knowledge.",
-     learningObjectives: ["Teaching methodologies", "Tutorial creation", "Community engagement", "Knowledge sharing"],
-     estimatedTime: "25-35 hours"
-   },
-   {
-     number: 51,
-     skill: "Industry Trends & Innovation",
-     task: "Stay current with emerging technologies and industry developments.",
-     buildOn: "Builds on Step 50: Teaching others, now continuous learning and adaptation.",
-     difficulty: { complexity: 4, scope: 3 },
-     description: "Develop the habit of continuous learning to stay relevant in the rapidly evolving field of 3D technology.",
-     learningObjectives: ["Technology research", "Trend analysis", "Innovation adoption", "Future planning"],
-     estimatedTime: "20-30 hours"
-   },
-   {
-     number: 52,
-     skill: "Capstone Masterpiece",
-     task: "Create a comprehensive project that demonstrates your full range of skills.",
-     buildOn: "Combines Steps 1-51: Complete mastery demonstration.",
-     difficulty: { complexity: 5, scope: 5 },
-     description: "Produce a masterpiece project that showcases your complete 3D modeling expertise across all learned disciplines.",
-     learningObjectives: ["Project integration", "Skill synthesis", "Professional execution", "Career milestone achievement"],
-     estimatedTime: "50-80 hours"
-   }
- ];
+    // Phase 3: Blender Technical Mastery (Steps 26-45)
+    {
+      number: 26,
+      skill: "Blender Fundamentals",
+      task: "Learn Blender's interface and basic mesh editing tools.",
+      buildOn: "Transition from FreeCAD: Adapt parametric knowledge to mesh-based modeling.",
+      difficulty: { complexity: 4, scope: 2 },
+      description: "Master Blender's unique interface and workflow to unlock powerful mesh modeling capabilities.",
+      learningObjectives: ["Blender interface mastery", "Basic mesh editing", "Navigation and selection", "Workflow adaptation"],
+      estimatedTime: "15-20 hours"
+    },
+    {
+      number: 27,
+      skill: "Advanced Mesh Editing",
+      task: "Use Blender's mesh tools to create and modify complex geometry.",
+      buildOn: "Builds on Step 26: Interface basics, now advanced mesh manipulation.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Develop expertise in Blender's mesh editing tools for creating detailed, precise geometry.",
+      learningObjectives: ["Advanced mesh operations", "Topology optimization", "Edge flow management", "Precision modeling techniques"],
+      estimatedTime: "18-25 hours"
+    },
+    {
+      number: 28,
+      skill: "UV Mapping & Texturing",
+      task: "Create UV maps and apply textures to your 3D models.",
+      buildOn: "Builds on Step 27: Mesh editing, now add surface detail and materials.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Learn professional texturing workflows to add realistic surface detail to your models.",
+      learningObjectives: ["UV unwrapping techniques", "Texture creation and application", "Material setup", "PBR texturing"],
+      estimatedTime: "20-25 hours"
+    },
+    {
+      number: 29,
+      skill: "Lighting & Rendering",
+      task: "Set up professional lighting and render high-quality images.",
+      buildOn: "Builds on Step 28: Textured models, now create professional presentations.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Master the art of lighting and rendering to create stunning visual presentations of your 3D work.",
+      learningObjectives: ["Lighting setup techniques", "Render engine mastery", "Post-processing", "Composition and presentation"],
+      estimatedTime: "22-28 hours"
+    },
+    {
+      number: 30,
+      skill: "Character Modeling",
+      task: "Model a detailed character or figure using Blender's tools.",
+      buildOn: "Builds on Step 29: Rendering basics, now create organic character forms.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Develop character modeling skills to create expressive, anatomically correct figures.",
+      learningObjectives: ["Character proportions", "Anatomy understanding", "Facial modeling", "Pose and expression"],
+      estimatedTime: "25-35 hours"
+    },
+    {
+      number: 31,
+      skill: "Rigging & Animation",
+      task: "Create rigs and animate your 3D models.",
+      buildOn: "Builds on Step 30: Static characters, now bring them to life with movement.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Learn professional rigging and animation techniques to create dynamic, moving 3D content.",
+      learningObjectives: ["Rigging fundamentals", "Animation principles", "Keyframe animation", "Motion studies"],
+      estimatedTime: "28-35 hours"
+    },
+    {
+      number: 32,
+      skill: "Hard Surface Modeling",
+      task: "Model mechanical and architectural objects with precision.",
+      buildOn: "Builds on Step 31: Organic forms, now master hard surface techniques.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Develop expertise in modeling mechanical, architectural, and industrial objects with technical precision.",
+      learningObjectives: ["Hard surface techniques", "Precision modeling", "Industrial design", "Technical accuracy"],
+      estimatedTime: "25-30 hours"
+    },
+    {
+      number: 33,
+      skill: "Procedural Modeling",
+      task: "Use modifiers and procedural techniques for efficient modeling.",
+      buildOn: "Builds on Step 32: Manual modeling, now leverage automation and efficiency.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Master Blender's procedural tools and modifiers to create complex models efficiently.",
+      learningObjectives: ["Modifier stack mastery", "Procedural generation", "Efficiency techniques", "Complex pattern creation"],
+      estimatedTime: "20-28 hours"
+    },
+    {
+      number: 34,
+      skill: "Sculpting Fundamentals",
+      task: "Learn digital sculpting with Blender's sculpt mode.",
+      buildOn: "Builds on Step 33: Procedural techniques, now organic sculpting.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Discover the power of digital sculpting to create highly detailed organic forms.",
+      learningObjectives: ["Sculpt mode navigation", "Brush techniques", "Detail creation", "Sculpting workflow"],
+      estimatedTime: "22-30 hours"
+    },
+    {
+      number: 35,
+      skill: "Advanced Sculpting",
+      task: "Create highly detailed sculptures with advanced techniques.",
+      buildOn: "Builds on Step 34: Basic sculpting, now professional-level detail work.",
+      difficulty: { complexity: 5, scope: 5 },
+      description: "Push the boundaries of digital sculpting to create production-ready detailed models.",
+      learningObjectives: ["Advanced brush control", "Detail refinement", "Sculpting best practices", "High-resolution workflows"],
+      estimatedTime: "30-40 hours"
+    },
+    {
+      number: 36,
+      skill: "Retopology",
+      task: "Convert high-poly sculpts to low-poly game-ready models.",
+      buildOn: "Builds on Step 35: High-detail sculpting, now optimize for real-time use.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Learn professional retopology techniques to prepare sculpted models for games and real-time applications.",
+      learningObjectives: ["Retopology techniques", "Quad-based topology", "Edge flow optimization", "Game asset preparation"],
+      estimatedTime: "25-35 hours"
+    },
+    {
+      number: 37,
+      skill: "Normal Map Baking",
+      task: "Bake high-poly details onto low-poly models.",
+      buildOn: "Builds on Step 36: Retopologized models, now preserve sculpt details.",
+      difficulty: { complexity: 5, scope: 3 },
+      description: "Master the art of baking high-resolution detail into efficient, low-polygon models.",
+      learningObjectives: ["Normal map generation", "Texture baking", "Detail preservation", "Optimization techniques"],
+      estimatedTime: "20-28 hours"
+    },
+    {
+      number: 38,
+      skill: "Shader Creation",
+      task: "Create custom materials and shaders for realistic rendering.",
+      buildOn: "Builds on Step 37: Baked textures, now advanced material creation.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Develop custom shaders and materials to achieve photorealistic rendering results.",
+      learningObjectives: ["Node-based materials", "Shader programming basics", "Advanced material properties", "Realistic material creation"],
+      estimatedTime: "28-35 hours"
+    },
+    {
+      number: 39,
+      skill: "Particle Systems",
+      task: "Create dynamic effects using Blender's particle system.",
+      buildOn: "Builds on Step 38: Static materials, now dynamic simulations.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Harness the power of particle systems to create dynamic, realistic effects and simulations.",
+      learningObjectives: ["Particle system setup", "Emitter configuration", "Force field application", "Effect optimization"],
+      estimatedTime: "25-32 hours"
+    },
+    {
+      number: 40,
+      skill: "Physics Simulation",
+      task: "Use Blender's physics engine for realistic simulations.",
+      buildOn: "Builds on Step 39: Particle effects, now rigid/soft body dynamics.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Master physics simulations to create realistic motion and interaction in your 3D scenes.",
+      learningObjectives: ["Rigid body physics", "Soft body simulation", "Cloth dynamics", "Collision detection"],
+      estimatedTime: "30-38 hours"
+    },
+    {
+      number: 41,
+      skill: "Python Scripting",
+      task: "Automate workflows using Blender's Python API.",
+      buildOn: "Builds on Step 40: Manual processes, now introduce automation.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Learn to automate repetitive tasks and extend Blender's functionality through Python scripting.",
+      learningObjectives: ["Python fundamentals", "Blender API usage", "Script creation", "Workflow automation"],
+      estimatedTime: "35-45 hours"
+    },
+    {
+      number: 42,
+      skill: "Advanced Rendering",
+      task: "Master Cycles and EEVEE for professional-quality renders.",
+      buildOn: "Builds on Step 41: Technical skills, now focus on final presentation.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Perfect your rendering skills to create professional-quality images and animations.",
+      learningObjectives: ["Advanced render settings", "Compositing techniques", "Render optimization", "Quality control"],
+      estimatedTime: "28-35 hours"
+    },
+    {
+      number: 43,
+      skill: "Video Editing & VFX",
+      task: "Edit rendered footage and add visual effects.",
+      buildOn: "Builds on Step 42: Static renders, now create dynamic video content.",
+      difficulty: { complexity: 5, scope: 5 },
+      description: "Combine 3D modeling with video editing and visual effects for complete multimedia production.",
+      learningObjectives: ["Video sequence editing", "VFX integration", "Motion graphics", "Post-production workflow"],
+      estimatedTime: "30-40 hours"
+    },
+    {
+      number: 44,
+      skill: "Game Asset Pipeline",
+      task: "Create and optimize assets for game engines.",
+      buildOn: "Builds on Step 43: Video production, now game development focus.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Learn the complete pipeline for creating optimized 3D assets for modern game engines.",
+      learningObjectives: ["LOD creation", "Texture optimization", "Engine-specific workflows", "Performance optimization"],
+      estimatedTime: "25-35 hours"
+    },
+    {
+      number: 45,
+      skill: "AI-Assisted Modeling",
+      task: "Integrate AI tools and generative techniques into your workflow.",
+      buildOn: "Builds on Step 44: Traditional modeling, now leverage AI assistance.",
+      difficulty: { complexity: 5, scope: 4 },
+      description: "Explore how AI and machine learning can enhance and accelerate your 3D modeling workflow.",
+      learningObjectives: ["AI tool integration", "Generative modeling", "Workflow enhancement", "Future-ready techniques"],
+      estimatedTime: "20-30 hours"
+    },
+
+    // Phase 4: Professional Development (Steps 46-52)
+    {
+      number: 46,
+      skill: "Community Collaboration",
+      task: "Contribute to open-source projects and collaborate with the Blender community.",
+      buildOn: "Builds on Step 45: Individual work, now collaborative development.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Learn to work effectively within the open-source community and contribute to larger projects.",
+      learningObjectives: ["Open-source contribution", "Community collaboration", "Code review processes", "Project management"],
+      estimatedTime: "15-25 hours"
+    },
+    {
+      number: 47,
+      skill: "Business & Entrepreneurship",
+      task: "Develop business skills for 3D modeling entrepreneurship.",
+      buildOn: "Builds on Step 46: Technical collaboration, now business development.",
+      difficulty: { complexity: 3, scope: 4 },
+      description: "Learn the business side of 3D modeling including freelancing, pricing, and client management.",
+      learningObjectives: ["Pricing strategies", "Client communication", "Project management", "Business development"],
+      estimatedTime: "20-30 hours"
+    },
+    {
+      number: 48,
+      skill: "Portfolio Development",
+      task: "Create a professional portfolio showcasing your best work.",
+      buildOn: "Builds on Step 47: Business skills, now presentation and marketing.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Develop a compelling portfolio that effectively showcases your 3D modeling skills to potential clients and employers.",
+      learningObjectives: ["Portfolio curation", "Presentation design", "Personal branding", "Online presence"],
+      estimatedTime: "25-35 hours"
+    },
+    {
+      number: 49,
+      skill: "Advanced Specialization",
+      task: "Choose and master a specialized area (e.g., character design, architecture, product design).",
+      buildOn: "Builds on Step 48: General portfolio, now develop deep expertise in one area.",
+      difficulty: { complexity: 5, scope: 5 },
+      description: "Become an expert in a specific niche area of 3D modeling to stand out in the competitive market.",
+      learningObjectives: ["Specialization focus", "Industry standards", "Advanced techniques", "Professional networking"],
+      estimatedTime: "40-60 hours"
+    },
+    {
+      number: 50,
+      skill: "Teaching & Mentoring",
+      task: "Share your knowledge by teaching others or creating tutorials.",
+      buildOn: "Builds on Step 49: Personal expertise, now give back to the community.",
+      difficulty: { complexity: 4, scope: 4 },
+      description: "Develop teaching skills and contribute to the 3D community by mentoring beginners and sharing knowledge.",
+      learningObjectives: ["Teaching methodologies", "Tutorial creation", "Community engagement", "Knowledge sharing"],
+      estimatedTime: "25-35 hours"
+    },
+    {
+      number: 51,
+      skill: "Industry Trends & Innovation",
+      task: "Stay current with emerging technologies and industry developments.",
+      buildOn: "Builds on Step 50: Teaching others, now continuous learning and adaptation.",
+      difficulty: { complexity: 4, scope: 3 },
+      description: "Develop the habit of continuous learning to stay relevant in the rapidly evolving field of 3D technology.",
+      learningObjectives: ["Technology research", "Trend analysis", "Innovation adoption", "Future planning"],
+      estimatedTime: "20-30 hours"
+    },
+    {
+      number: 52,
+      skill: "Capstone Masterpiece",
+      task: "Create a comprehensive project that demonstrates your full range of skills.",
+      buildOn: "Combines Steps 1-51: Complete mastery demonstration.",
+      difficulty: { complexity: 5, scope: 5 },
+      description: "Produce a masterpiece project that showcases your complete 3D modeling expertise across all learned disciplines.",
+      learningObjectives: ["Project integration", "Skill synthesis", "Professional execution", "Career milestone achievement"],
+      estimatedTime: "50-80 hours"
+    }
+  ];
 
 export default function Challenge() {
    const [checked, setChecked] = useState<boolean[]>([]);
@@ -570,9 +572,20 @@ export default function Challenge() {
        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
          Moikas 3D Modeling Challenge
        </h1>
-       <p className="text-xl text-center mb-12 text-gray-600">
-         {completed} of {steps.length} steps completed — keep going at your own pace!
-       </p>
+        <p className="text-xl text-center mb-8 text-gray-600">
+          {completed} of {steps.length} steps completed — keep going at your own pace!
+        </p>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-4xl mx-auto">
+          <h3 className="text-lg font-semibold text-blue-800 mb-2">💡 4-Phase Learning Structure</h3>
+          <p className="text-blue-700 text-sm">
+            <strong>Phase 1 (Steps 1-15):</strong> Tinkercad Foundation - Basic 3D concepts<br/>
+            <strong>Phase 2 (Steps 16-25):</strong> FreeCAD Intermediate - Parametric CAD mastery<br/>
+            <strong>Phase 3 (Steps 26-45):</strong> Blender Technical - Advanced mesh modeling<br/>
+            <strong>Phase 4 (Steps 46-52):</strong> Professional Development - Business & career skills<br/>
+            <em>All software is completely free! Use FreeCAD or any parametric CAD you prefer.</em>
+          </p>
+        </div>
 
        <div className="space-y-8">
          {steps.map((step, i) => (
